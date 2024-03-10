@@ -14,8 +14,8 @@
             "servertype": "openocd",
             "configFiles": [
                 // Add interface and target cfg files
-                // "interface/stlink.cfg",
-                // "target/stm32l4x.cfg"
+                "interface/stlink.cfg",
+                "target/stm32l4x.cfg"
             ],
             "liveWatch": {
                 "enabled": true,

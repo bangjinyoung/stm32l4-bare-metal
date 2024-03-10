@@ -2,6 +2,7 @@
 
 void SystemClock_Config(void);
 void Error_Handler(void);
+void GPIO_Init(void);
 
 int main(void)
 {
@@ -9,8 +10,12 @@ int main(void)
 
     SystemClock_Config();
 
+    GPIO_Init();
+
     while (1) {
-        
+        HAL_Delay(1000);
+
+        HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_9);
     }
 }
 
@@ -64,4 +69,17 @@ void SystemClock_Config(void)
     {
         Error_Handler();
     }
+}
+
+void GPIO_Init(void)
+{
+    GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+    __HAL_RCC_GPIOC_CLK_ENABLE();
+
+    GPIO_InitStruct.Pin = GPIO_PIN_9;
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 }
