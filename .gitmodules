@@ -1,0 +1,7 @@
+[submodule "lib/stm32l4_hal"]
+	path = lib/stm32l4_hal
+	url = https://github.com/STMicroelectronics/stm32l4xx_hal_driver.git
+[submodule "lib/cmsis_l4"]
+	path = lib/cmsis_l4
+[submodule "lib/cmsis_5"]
+	path = lib/cmsis_5
