@@ -32,6 +32,8 @@ file(GLOB C_SOURCES CONFIGURE_DEPENDS
         lib/cmsis_l4/Source/Templates/system_stm32l4xx.c
 )
 
+list(REMOVE_ITEM C_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/lib/stm32l4_hal/Src/stm32l4xx_hal_timebase_tim_template.c")
+
 # Add assembly files
 set(ASM_SOURCES
         lib/cmsis_l4/Source/Templates/gcc/startup_stm32l475xx.s
