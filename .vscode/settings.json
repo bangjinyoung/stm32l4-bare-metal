@@ -7,4 +7,5 @@
         "-header-insertion=never",
         "--compile-commands-dir=${workspaceFolder}/build",
     ],
+    "clangd.path": "/home/clangd_17.0.3/bin/clangd",
 }
